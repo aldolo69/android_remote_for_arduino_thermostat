@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Thermo Arduino</string>
+    <string name="weeksetup">Weekly setup</string>
+    <string name="setup">Setup</string>
+    <string name="send">Send</string>
+    <string name="day_of_week">MTWTFSS</string>
+    <string name="yymmddhhmmss">YYMMDDHHMM</string>
+    <string name="day_temp">Day temperature</string>
+    <string name="night_temp">Night temperature</string>
+    <string name="leave_temp">Leave temperature</string>
+    
+</resources>

@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ 
+    tools:context="ab.thermosetup.MainActivity" >
+    
+    
+    
+    
+    <LinearLayout
+        android:id="@+id/linearLayoutMain"
+    android:background="@android:color/darker_gray"
+      android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@android:drawable/ic_media_play"
+                android:onClick="buttontimer"
+                android:text="@string/weeksetup" />"
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@android:drawable/ic_media_play"
+                android:onClick="buttontimersetup"
+                android:text="@string/setup" />
+            
+
+        
+    </LinearLayout>
+
+    
+    
+    
+    
+    
+</RelativeLayout>

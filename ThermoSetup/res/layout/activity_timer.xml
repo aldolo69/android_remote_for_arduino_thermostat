@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    tools:context="ab.thermosetup.TimerActivity" >
+
+    
+            <Button
+            android:id="@+id/buttonalarm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@android:drawable/ic_media_play"
+            android:onClick="buttonsend"
+            android:text="@string/send" />
+    
+            
+    <LinearLayout
+          android:id="@+id/linearLayout1"
+       
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" 
+        android:layout_below="@+id/buttonalarm"
+        >
+
+    
+         
+    
+    </LinearLayout>
+
+    
+    <RelativeLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:id="@+id/relativeLayout1"
+        android:layout_below="@+id/buttonalarm"    
+          >
+        
+        <ImageView
+            android:id="@+id/imagelampTimer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/light_bulb_transparent"
+                />"
+        
+      </RelativeLayout>
+     
+      
+    <TextView
+        android:id="@+id/textViewCounter1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="200sp" />
+
+</RelativeLayout>
