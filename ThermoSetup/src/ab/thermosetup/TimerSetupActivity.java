@@ -106,13 +106,13 @@ public class TimerSetupActivity extends Activity implements
 				)
 				+ String.format(
 						"%02x",
-						(((1 + cal.get(Calendar.MONTH))) & (8 + 4)) * 16
+						((((1 + cal.get(Calendar.MONTH))) & (8 + 4)) * 16)
 								+ (cal.get(Calendar.YEAR) - 2000))
-				+ String.format("%02x", (cal.get(Calendar.DAY_OF_MONTH)&15) * 32
-						+ (cal.get(Calendar.HOUR_OF_DAY))&15)
+				+ String.format("%02x", ((cal.get(Calendar.DAY_OF_MONTH)&15) * 16)
+						+ ((cal.get(Calendar.HOUR_OF_DAY))&15))
 				+ String.format(
 						"%02x",
-						(((1 + cal.get(Calendar.MONTH))) & (2 + 1)) * 64
+						((((1 + cal.get(Calendar.MONTH))) & (2 + 1)) * 64)
 								+ cal.get(Calendar.MINUTE));
 
 		bl.startTimerCountDown(output);
@@ -126,6 +126,7 @@ public class TimerSetupActivity extends Activity implements
 	}
 
 	public void onStartTrackingTouch(SeekBar seekBar) {
+	
 	}
 
 	public void onStopTrackingTouch(SeekBar seekBar) {
