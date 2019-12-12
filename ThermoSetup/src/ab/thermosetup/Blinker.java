@@ -35,7 +35,7 @@ public class Blinker {
 	boolean bBlack = true;// present state of the screen
 	String strMsg = null;// message to be sent
 	int iStrIndex = 0;// char in process
-	byte byteMsg;// char in process
+	int byteMsg;// char in process
 	int iStatus = -1;// 0=stop,1=begin of tx,2=tx ,3=eot
 	// bot=10 bit 0 + 1
 	// eof=9 bit 0
@@ -84,15 +84,15 @@ public class Blinker {
 		}
 	}
 
-	byte charToBin(byte byteMsg) {
+	int charToBin(char byteMsg) {
 		if (byteMsg >= '0' && byteMsg <= '9') {
 			byteMsg -= '0';
 		}
 		if (byteMsg >= 'A' && byteMsg <= 'F') {
-			byteMsg -= 'A' + 10;
+			byteMsg -= 'A' - 10;
 		}
 		if (byteMsg >= 'a' && byteMsg <= 'f') {
-			byteMsg -= 'a' + 10;
+			byteMsg -= 'a' - 10;
 		}
 		return byteMsg;
 	}
@@ -194,19 +194,21 @@ public class Blinker {
 						// only numeric string?
 
 						if (iBitPerChar == 4) {
-							byteMsg = (byte) (charMsg & 0x00FF);
+							byteMsg = (int) (charMsg);
 							byteMsg -= 48;// ascii for '0'
+							//you can only send 0..9 digits
 						}
 						if (iBitPerChar == 8) {
 							if (iBytePerChar == 1) {
-								byteMsg = (byte) (charMsg);
+								byteMsg = (int) (charMsg);
+								//never tested this option....
 							} else {
 
-								byteMsg = charToBin((byte) (charMsg & 0x00FF));
-
+								byteMsg = charToBin(charMsg);
+								byteMsg<<=4;
 								iStrIndex++;
 								charMsg = strMsg.charAt(iStrIndex);
-								byteMsg += charToBin((byte) (charMsg & 0x00FF)) * 16;
+								byteMsg |= charToBin( charMsg );
 							}
 						}
 
